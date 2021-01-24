@@ -1,0 +1,25 @@
+{
+    "workbench.colorCustomizations": {
+        // "editor.background": "#000",
+        // "editor.background": "#070029",
+        // "editor.foreground": "#fca9e3",
+        // "editor.selectionBackground": "#d9ff006e",
+        // "editorBracketMatch.background": "#fafce952",
+        // "editorBracketMatch.border": "#965ffa",
+        // "editor.selectionHighlightBorder": "#41f828",
+        // "editor.inactiveSelectionBackground": "#11bbe6",
+        // "sideBar.background": "#FFA21F",
+        // "sideBar.border": "#ffa21f",
+        // "sideBar.foreground": "#000",
+        // "sideBar.foreground": "#fff",
+        // "sideBarSectionHeader.border": "#fff"
+    },
+    "editor.tokenColorCustomizations": {
+        // "comments": "#fff",
+        // "keywords": "#F0CFFF",
+        // "numbers": "#ADFF9E",
+        // "types": "#FF0000",
+        // "strings": "#41f828",
+        // "variables": "#fff"
+    }
+}
