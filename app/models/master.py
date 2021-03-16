@@ -111,12 +111,14 @@ class Model:
         try:
             self.upldate = mdict ['upldate']
         except Exception as err:
-            print ('No Upload Date')
+            pass
+            # print ('No Upload Date')
 
         try:
             self.moddate = mdict ['moddate']
         except Exception as setmoddate:
-            print ('No Modification Date')
+            pass 
+            # print ('No Modification Date')
 
 
 

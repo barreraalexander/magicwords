@@ -1,1 +1,13 @@
-//DATE: 11-17-2020
+//DATE: 03-11-21
+
+I'm picking on the project. Right now, the webscraper seems to have been working in the past, I just have to test if it's working now. And then,I have to scrape from my own content.
+
+Rigth now the webscraper is working. I want to building a master database that holds all of the scraped. And every new word from every user will be added to the database--and it's MASTER_WEIGHT can be it's total weight among all users of all time.
+
+I'm receiving a strange permission denied error in localfilescraper.txt.
+
+I may just have to create another util as well for scraping single files at at time, and just plug it into my localfilescraper. I will be needing both tools afterall. But, I'll leave that for tomorrow.
+
+//DATE: 03-13-21
+
+scraping files now in the works

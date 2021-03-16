@@ -1,39 +1,40 @@
 from os import getcwd, listdir, chdir, path, walk
 
-MAIN_LIT = '~/main_drive/lit'
-LIT_POEMS = path.join(MAIN_LIT, 'poems')
-LIT_LOGS = path.join(MAIN_LIT, 'logs')
-LIT_OBSERVATIONS = path.join(MAIN_LIT, 'observations')
-
-LIT_FINAL_POEMS = path.join (MAIN_LIT, 'final_txt')
-
-
 class LocalFileScraper:
+    MAIN_LIT = '/Users/barre/main_drive/lit/'
+    LIT_POEMS = path.join(MAIN_LIT, 'poems')
+    LIT_POEMS_DRAFTS = path.join(MAIN_LIT, 'poems/drafts_txt')
+    LIT_POEMS_FINALS = path.join(MAIN_LIT, 'poems/final_txt')
+    LIT_LOGS = path.join(MAIN_LIT, 'logs')
+    LIT_OBSERVATIONS = path.join(MAIN_LIT, 'observations')
     def __init__(self):
         pass
 
     def scrape_obs (self):
         pass
 
-
-    def scrape_poems (self):
-        routes = walk(top=LIT_POEMS, topdown=True)
-        for step in routes:
-            print (step)
-            print ('\n\n')
-
-    def scrape_logs (self):
+    def scrape_logs(self):
         pass
 
+    def scrape_directory (self, directory):
+        """ LIST OF POSSIBLE DIRECTORIES
+        LIT_POEMS_DRAFTS
+        LIT_POEMS_FINALS
+         """
+        chdir(directory)
+        filenames = [ filename for filename in listdir() \
+                    if filename[-4:] == ".txt" ]
+        all_lines = []
+        for filename in filenames:
+            fpath = path.join(directory, filename)            
 
-    def run (self):
-        pass
+            with open(fpath, "r") as f:
+                lines = [(i,line[:-1].replace("\"", "'")) \
+                        for i,line in enumerate(f.readlines())]
 
-        # chdir (LIT_LOGS)
-        # print (getcwd())
-        print (listdir())
+            for line in lines:
+                all_lines.append((line, filename))
+        return all_lines
 
 if __name__=='__main__':
     local_scraper = LocalFileScraper ()
-    local_scraper.scrape_poems()
-    local_scraper.run()
