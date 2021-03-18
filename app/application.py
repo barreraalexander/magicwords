@@ -75,17 +75,62 @@ class App:
         # scraped_words = Scraped_Word.get(getall=True)
         pass
         
+    def get_chunks (self):
+        my_lines = MyLine.get(getall=True)
+
+        position_lines = [line for line in my_lines \
+                            if line.position > 0 and \
+                                line.position < 11] 
+        for line in position_lines:
+            print (line)
+
+
+        return position_lines
+
+    def all_titles (self):
+        my_lines = MyLine.get(getall=True)
+
+        all_titles = [line.used_in for line in my_lines]   
+
+        all_titles = list(set(all_titles))
+        all_titles.sort()
+
+        return all_titles
+
+    def get_poem(self, filename):
+        all_titles = self.all_titles()
+        
+        poem_lines = MyLine.get(by="used_in", value=filename, getmany=True)
+
+        poem_lines.sort(key=lambda line:line.position)
+        
+        return poem_lines
+
     def run(self):
+        all_titles = self.all_titles()
+        
+        poem = self.get_poem("Untitled #9.txt")
+        for title in poem:
+            # print (title)
+            pass
+        word = Scraped_Word.get(by="word", value="galvanized")
+        # word = Scraped_Word.get(getall=True)
+        # print (word[1])
+        print (word)
+    #     poem_lines = MyLine.get(by="used_in", value=all_titles[1], getmany=True)
+
+    #     poem_lines.sort(key=lambda line:line.position)
+    # # ut.sort(key=lambda x: x.count, reverse=True)
+        
+
+    #     for line in poem_lines:
+    #         print (line.line)
+        # all_titles.sort()
+        
+
         # scraped_words = Scraped_Word.get(getall=True)
         # for word in scraped_words:
         #     print (word.word)
-
-        my_lines = MyLine.get(getall=True)
-
-        position1_lines = [line for line in my_lines \
-                            if line.position == 1] 
-        for line in position1_lines:
-            print (line)
 
         # lines = MyLine.get(getall=True)
         # all_words = []

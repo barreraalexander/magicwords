@@ -104,7 +104,26 @@ class Scraped_Word(Model):
     def __str__(self):
         return (f"""
         ID: {self._id}
+
         Word: {self.word}
+        
+        Part of Speech: {self.pos}
+        
+        Definitions: {self.definitions.split('$')}
+        
+        Relatives: {self.rels}
+        
+        Antonymns: {self.ants}
+        
+        Synonymns: {self.syns}
+        
+        Weight: {self.weight}
+        
+        Scraped From: {self.scraped_from}
+        
+        Sscraped From Url: {self.scraped_url}
+        
         Modification Date: {self.moddate}
+        
         Upload Date: {self.upldate}
                 """)
